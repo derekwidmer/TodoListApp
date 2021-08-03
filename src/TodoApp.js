@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Typography, Paper, AppBar, Toolbar, Grid } from '@material-ui/core'
 import { v4 as uuid } from 'uuid';
 import TodoList from './TodoList'
@@ -6,12 +6,12 @@ import TodoForm from './TodoForm'
 
 
 export default function TodoApp() {
-    const initialTodos = [
-        { id: uuid(), task: "Clean Fish Tank", completed: "false" },
-        { id: uuid(), task: "Wash Car", completed: "true" },
-        { id: uuid(), task: "Shave Beard", completed: "false" },
-    ];
+    const initialTodos = JSON.parse(window.localStorage.getItem("todos")) || [];
     const [todos, setTodos] = useState(initialTodos);
+
+    useEffect(() => {
+        window.localStorage.setItem("todos", JSON.stringify(todos))
+    })
 
     const addTodo = (newTodoText) => {
         setTodos(currentTodos => ([...currentTodos, { id: uuid(), task: newTodoText, completed: false }]))
