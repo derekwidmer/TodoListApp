@@ -10,10 +10,8 @@ export default function TodoList({ todos, handleDelete, handleToggle, handleEdit
                     {todos.map((todo, i) => (
                         <>
                             <Todo
-                                task={todo.task}
+                                {...todo}
                                 key={todo.id}
-                                id={todo.id}
-                                completed={todo.completed}
                                 handleDelete={handleDelete}
                                 handleToggle={handleToggle}
                                 handleEdit={handleEdit}
