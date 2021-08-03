@@ -3,7 +3,7 @@ import useInputState from './hooks/useInputState'
 import { TextField } from '@material-ui/core';
 
 export default function TodoEditForm({ task, id, handleEdit, toggleEditing }) {
-    const [value, updateValue, resetValue] = useInputState(task);
+    const [value, updateValue] = useInputState(task);
     return (
         <form
             onSubmit={e => {

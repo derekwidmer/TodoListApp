@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Paper, TextField } from '@material-ui/core'
+import { Paper, TextField } from '@material-ui/core'
 import useInputState from './hooks/useInputState'
 
 export default function TodoForm({ handleSubmit }) {

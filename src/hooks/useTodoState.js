@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import useLocalStorageState from './useLocalStorageState';
 import { v4 as uuid } from 'uuid';
 
-export default initialTodos => {
-    const [todos, setTodos] = useState(initialTodos);
+const useTodoState = initialTodos => {
+    const [todos, setTodos] = useLocalStorageState("todos", initialTodos);
     return {
         todos,
         addTodo: (newTodoText) => {
@@ -27,3 +27,5 @@ export default initialTodos => {
         }
     }
 }
+
+export default useTodoState;
