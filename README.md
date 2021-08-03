@@ -1,6 +1,6 @@
 # Todo List App
 
-A new and improved version of the original Todo List App. This version includes Hooks and uses localStorage to save your todos.
+A new and improved version of the original Todo List App. This version includes Hooks and uses localStorage to save your todos. Made with React.
 
 ## What I Learned
 
