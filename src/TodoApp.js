@@ -7,7 +7,7 @@ import { TodosProvider } from './contexts/todos.context'
 
 export default function TodoApp() {
     const initialTodos = [{ id: 0, task: "Wash Car", completed: false }]
-    const { todos, addTodo, removeTodo, toggleTodo, editTodo } = useTodoState(initialTodos);
+    // const { todos, addTodo, removeTodo, toggleTodo, editTodo } = useTodoState(initialTodos);
 
     return (
         <div>

@@ -3,12 +3,12 @@ import { ListItem, ListItemText, Checkbox, IconButton, ListItemSecondaryAction, 
 import { Delete, Edit } from '@material-ui/icons'
 import useToggleState from './hooks/useToggleState'
 import TodoEditForm from './TodoEditForm'
-import { TodosContext } from './contexts/todos.context'
+import { DispatchContext } from './contexts/todos.context'
 
 
 export default function Todo({ task, completed, id }) {
     const [isEditing, toggleEditing] = useToggleState(false);
-    const { dispatch } = useContext(TodosContext);
+    const dispatch = useContext(DispatchContext);
     return (
         <ListItem style={{ height: "64px" }}>
             {!isEditing ? (
