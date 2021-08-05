@@ -1,14 +1,10 @@
 import React from 'react'
 import { Typography, Paper, AppBar, Toolbar, Grid } from '@material-ui/core'
-import useTodoState from './hooks/useTodoState'
 import TodoList from './TodoList'
 import TodoForm from './TodoForm'
 import { TodosProvider } from './contexts/todos.context'
 
 export default function TodoApp() {
-    const initialTodos = [{ id: 0, task: "Wash Car", completed: false }]
-    // const { todos, addTodo, removeTodo, toggleTodo, editTodo } = useTodoState(initialTodos);
-
     return (
         <div>
             <Paper style={{
