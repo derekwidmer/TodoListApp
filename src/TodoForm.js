@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Paper, TextField } from '@material-ui/core'
 import useInputState from './hooks/useInputState'
+import { TodosContext } from './contexts/todos.context'
 
-export default function TodoForm({ handleSubmit }) {
+export default function TodoForm() {
     const [value, updateValue, resetValue] = useInputState("")
+    const { addTodo } = useContext(TodosContext);
     return (
         <Paper style={{ margin: "1rem 0", padding: "0 1rem" }}>
             <form onSubmit={e => {
                 e.preventDefault();
-                handleSubmit(value);
+                addTodo(value);
                 resetValue();
             }}>
                 <TextField
@@ -18,7 +20,6 @@ export default function TodoForm({ handleSubmit }) {
                     label="Add New Todo"
                     fullWidth
                 />
-                {/* <Button variant="contained" color="primary" type="submit">Add Todo</Button> */}
             </form>
         </Paper>
     )
