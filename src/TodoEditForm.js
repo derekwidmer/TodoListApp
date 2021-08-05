@@ -6,12 +6,12 @@ import { TodosContext } from './contexts/todos.context'
 
 export default function TodoEditForm({ task, id, toggleEditing }) {
     const [value, updateValue] = useInputState(task);
-    const { editTodo } = useContext(TodosContext);
+    const { dispatch } = useContext(TodosContext);
     return (
         <form
             onSubmit={e => {
                 e.preventDefault();
-                editTodo(id, value);
+                dispatch({ type: "EDIT", id, task: value });
                 toggleEditing();
             }}
             style={{ margin: "0 1rem", width: "100%" }}
